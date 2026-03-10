@@ -1,0 +1,13 @@
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+  <div *ngFor="let training of trainings" class="bg-white shadow-md rounded-lg p-4 hover:shadow-xl transition-shadow duration-300">
+    <h2 class="text-xl font-semibold text-gray-800">Name : {{ training.Title }} </h2>
+    <p class="text-gray-600">Description: {{ training.description }}</p>
+    <p class="text-gray-600">Starting Date: {{ training.startDate }}</p>
+    <p class="text-gray-600">End Date: {{ training.endDate }}</p>
+    <p class="text-gray-600">Training Status: {{ training.trainingStatus }}</p>
+    <p class="text-gray-600">capacity: {{ training.capacity }}</p>
+  </div>   
+</div> 
+
+
+<h1>hello</h1>

@@ -1,0 +1,23 @@
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+  @for (emp of employees; track emp.employeeNumber) {
+    <div class="bg-white shadow-md rounded-lg p-4 hover:shadow-xl transition-shadow duration-300">
+      <h2 class="text-xl font-semibold text-gray-800">{{ emp.firstName }} {{ emp.lastName }}</h2>
+      <p class="text-gray-600">Email: {{ emp.email }}</p>
+      <p class="text-gray-600">Phone: {{ emp.phone || 'N/A' }}</p>
+      <p class="text-gray-600">Job: {{ emp.jobTile || 'N/A' }}</p>
+      <p class="text-gray-600">Department ID: {{ emp.departmentId }}</p>
+      <p class="text-gray-600">Manager ID: {{ emp.managerId || 'N/A' }}</p>
+    </div>
+  }
+</div>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+  <div *ngFor="let emp of employees" class="bg-white shadow-md rounded-lg p-4 hover:shadow-xl transition-shadow duration-300">
+    <h2 class="text-xl font-semibold text-gray-800">{{ emp.firstName }} {{ emp.lastName }}</h2>
+    <p class="text-gray-600">Email: {{ emp.email }}</p>
+    <p class="text-gray-600">Phone: {{ emp.phone || 'N/A' }}</p>
+    <p class="text-gray-600">Job: {{ emp.jobTile || 'N/A' }}</p>
+    <p class="text-gray-600">Department ID: {{ emp.departmentId }}</p>
+    <p class="text-gray-600">Manager ID: {{ emp.managerId || 'N/A' }}</p>
+  </div>
+</div> 
