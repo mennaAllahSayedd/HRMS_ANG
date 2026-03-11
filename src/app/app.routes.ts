@@ -14,7 +14,7 @@ export const routes: Routes = [
           children: [ 
                { path: '', redirectTo: 'trainings', pathMatch: 'full' },
                { path: 'trainings', component: TrainingList },
-               { path: 'employee-profile/:id', component: EmployeeProfile },    
+               { path: 'employee-profile', component: EmployeeProfile },    
                {path:'edit-employee-profile',component:EditEmployeeProfile} 
           ]
      }

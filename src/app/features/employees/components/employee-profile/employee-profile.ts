@@ -21,7 +21,7 @@ export class EmployeeProfile implements OnInit {
   }
 
   loadEmployee() {
-    const id = 1234;
+    const id = 1;
     this.employeeService.getEmployeeById(id).subscribe({
         next: (data) => {
           console.log(data)
