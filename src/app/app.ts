@@ -1,14 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import {EmployeeSidebar} from '../app/shared/employee-sidebar/employee-sidebar'
-import { Navbar } from './shared/navbar/navbar';
-import { NotFound } from './shared/not-found/not-found';
-import { EmployeeList } from './features/employees/components/employee-list/employee-list';
-import { TrainingList } from './features/trainings/components/training-list/training-list';
+import { Layout } from './layout/layout/layout';
 
 @Component({
   selector: 'app-root',
-  imports: [ TrainingList,EmployeeList],
+  imports: [Layout],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

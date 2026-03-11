@@ -1,23 +1,56 @@
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
-  @for (emp of employees; track emp.employeeNumber) {
-    <div class="bg-white shadow-md rounded-lg p-4 hover:shadow-xl transition-shadow duration-300">
-      <h2 class="text-xl font-semibold text-gray-800">{{ emp.firstName }} {{ emp.lastName }}</h2>
-      <p class="text-gray-600">Email: {{ emp.email }}</p>
-      <p class="text-gray-600">Phone: {{ emp.phone || 'N/A' }}</p>
-      <p class="text-gray-600">Job: {{ emp.jobTile || 'N/A' }}</p>
-      <p class="text-gray-600">Department ID: {{ emp.departmentId }}</p>
-      <p class="text-gray-600">Manager ID: {{ emp.managerId || 'N/A' }}</p>
+<div class="min-h-screen bg-emerald-50 py-8 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-6 flex items-center justify-between">
+      <h1 class="text-2xl font-bold text-black">
+        Employees
+      </h1>
+      <p class="text-sm text-gray-600">
+        Total: {{ employees?.length || 0 }}
+      </p>
     </div>
-  }
-</div>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
-  <div *ngFor="let emp of employees" class="bg-white shadow-md rounded-lg p-4 hover:shadow-xl transition-shadow duration-300">
-    <h2 class="text-xl font-semibold text-gray-800">{{ emp.firstName }} {{ emp.lastName }}</h2>
-    <p class="text-gray-600">Email: {{ emp.email }}</p>
-    <p class="text-gray-600">Phone: {{ emp.phone || 'N/A' }}</p>
-    <p class="text-gray-600">Job: {{ emp.jobTile || 'N/A' }}</p>
-    <p class="text-gray-600">Department ID: {{ emp.departmentId }}</p>
-    <p class="text-gray-600">Manager ID: {{ emp.managerId || 'N/A' }}</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div
+        *ngFor="let emp of employees"
+        class="bg-white rounded-2xl shadow-md border border-emerald-100 hover:shadow-lg hover:border-emerald-200 transition-all duration-200 overflow-hidden"
+      >
+        <div class="bg-emerald-100 px-4 py-3 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="h-8 w-8 rounded-full bg-white flex items-center justify-center text-sm font-semibold text-black">
+              {{ emp.firstName?.[0] || '?' }}{{ emp.lastName?.[0] || '' }}
+            </div>
+            <h2 class="text-sm font-semibold text-black truncate">
+              {{ emp.firstName }} {{ emp.lastName }}
+            </h2>
+          </div>
+          <span class="text-xs text-gray-700">
+            #{{ emp.employeeNumber }}
+          </span>
+        </div>
+
+        <div class="p-4 space-y-2 text-sm">
+          <p class="text-black">
+            <span class="font-medium text-gray-600">Email:</span>
+            <span class="ml-1 break-all">{{ emp.email }}</span>
+          </p>
+          <p class="text-black">
+            <span class="font-medium text-gray-600">Phone:</span>
+            <span class="ml-1">{{ emp.phone || 'N/A' }}</span>
+          </p>
+          <p class="text-black">
+            <span class="font-medium text-gray-600">Job:</span>
+            <span class="ml-1">{{ emp.jobTile || 'N/A' }}</span>
+          </p>
+          <p class="text-black">
+            <span class="font-medium text-gray-600">Department ID:</span>
+            <span class="ml-1">{{ emp.departmentId }}</span>
+          </p>
+          <p class="text-black">
+            <span class="font-medium text-gray-600">Manager ID:</span>
+            <span class="ml-1">{{ emp.managerId || 'N/A' }}</span>
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
-</div> 
+</div>

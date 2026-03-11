@@ -1,13 +1,56 @@
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
-  <div *ngFor="let training of trainings" class="bg-white shadow-md rounded-lg p-4 hover:shadow-xl transition-shadow duration-300">
-    <h2 class="text-xl font-semibold text-gray-800">Name : {{ training.Title }} </h2>
-    <p class="text-gray-600">Description: {{ training.description }}</p>
-    <p class="text-gray-600">Starting Date: {{ training.startDate }}</p>
-    <p class="text-gray-600">End Date: {{ training.endDate }}</p>
-    <p class="text-gray-600">Training Status: {{ training.trainingStatus }}</p>
-    <p class="text-gray-600">capacity: {{ training.capacity }}</p>
-  </div>   
-</div> 
+<div class="min-h-screen bg-emerald-50 py-8 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-6 flex items-center justify-between">
+      <h1 class="text-2xl font-bold text-black">
+        Trainings
+      </h1>
+      <p class="text-sm text-gray-600">
+        Total: {{ trainings?.length || 0 }}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div
+        *ngFor="let training of trainings"
+        class="bg-white rounded-2xl shadow-md border border-emerald-100 hover:shadow-lg hover:border-emerald-200 transition-all duration-200 overflow-hidden"
+      >
+        <div class="bg-emerald-100 px-4 py-3">
+          <h2 class="text-base font-semibold text-black line-clamp-2">
+            {{ training.Title }}
+          </h2>
+        </div>
+
+        <div class="p-4 space-y-3 text-sm">
+          <p class="text-black">
+            <span class="font-medium text-gray-600">Description:</span>
+            <span class="ml-1">{{ training.description }}</span>
+          </p>
+
+          <div class="grid grid-cols-1 gap-2">
+            <p class="text-black">
+              <span class="font-medium text-gray-600">Starting Date:</span>
+              <span class="ml-1">{{ training.startDate }}</span>
+            </p>
+            <p class="text-black">
+              <span class="font-medium text-gray-600">End Date:</span>
+              <span class="ml-1">{{ training.endDate }}</span>
+            </p>
+          </div>
+
+          <div class="flex items-center justify-between gap-3 pt-1">
+            <p class="text-black">
+              <span class="font-medium text-gray-600">Status:</span>
+              <span class="ml-1">{{ training.trainingStatus }}</span>
+            </p>
+            <p class="text-black">
+              <span class="font-medium text-gray-600">Capacity:</span>
+              <span class="ml-1">{{ training.capacity }}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-<h1>hello</h1>
