@@ -9,9 +9,11 @@ import { EditEmployeeProfile } from './features/edit-employee-profile/edit-emplo
 export const routes: Routes = [
 
      { path: 'employees', component: EmployeeList },
-          {
-          path: '', component: Layout,
-          children: [ { path: 'trainings', component: TrainingList },
+     {
+          path: 'layout', component: Layout,
+          children: [ 
+               { path: '', redirectTo: 'trainings', pathMatch: 'full' },
+               { path: 'trainings', component: TrainingList },
                { path: 'employee-profile/:id', component: EmployeeProfile },    
                {path:'edit-employee-profile',component:EditEmployeeProfile} 
           ]
