@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { Layout } from './layout/layout/layout';
+import { Layout } from './features/dashboard/layout/layout';
 import { RouterOutlet } from '@angular/router';
 
 @Component({

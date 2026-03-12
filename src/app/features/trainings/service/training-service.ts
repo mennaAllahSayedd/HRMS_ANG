@@ -16,4 +16,5 @@ export class TrainingService {
 
     return this.http.get<ITraining[]>(this.apiUrl);
   }
+  
 }

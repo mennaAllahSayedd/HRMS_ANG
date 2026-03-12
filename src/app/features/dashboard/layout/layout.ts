@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { EmployeeSidebar } from '../../shared/employee-sidebar/employee-sidebar';
-import { Navbar } from '../../shared/navbar/navbar';
+import { EmployeeSidebar } from '../../../shared/employee-sidebar/employee-sidebar';
+import { Navbar } from '../../../shared/navbar/navbar';
 import { RouterOutlet } from '@angular/router';
 
 @Component({

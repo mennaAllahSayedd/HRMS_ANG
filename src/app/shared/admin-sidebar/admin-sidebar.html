@@ -1,0 +1,73 @@
+<aside
+  id="admin-sidebar"
+  class="fixed top-0 left-0 z-40 w-64 h-full transition-transform -translate-x-full sm:translate-x-0"
+  aria-label="Admin Sidebar"
+>
+  <div class="h-full px-4 md:px-6 py-6 overflow-y-auto bg-emerald-600 bg-gradient-to-b from-emerald-600 to-emerald-700 border-e border-emerald-200 shadow-xl">
+    <div class="px-1">
+      <h2 class="text-sm font-semibold tracking-wide text-emerald-100 uppercase">
+       Admin
+      </h2>
+    </div>
+
+    <ul class="mt-6 space-y-3 font-medium">
+      <li>
+        <a [routerLink]="['employees']"
+          href="#"
+          class="flex items-center gap-3 px-3 py-2 rounded-xl text-emerald-50 hover:bg-emerald-400/80 hover:text-white transition-colors group"
+        >
+          <svg class="w-6 h-6 text-emerald-50" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M6 5.5C6 4.119 7.12 3 8.5 3S11 4.119 11 5.5 9.88 8 8.5 8 6 6.881 6 5.5Z"/>
+            <path d="M4 13.25C4 11.455 5.492 10 7.333 10h2.334C11.508 10 13 11.455 13 13.25V16H4v-2.75Z"/>
+            <path d="M17 4a3 3 0 1 1-2.121.879A2.996 2.996 0 0 1 17 4Z"/>
+            <path d="M15.333 11C13.492 11 12 12.455 12 14.25V16h6v-1.75C18 12.455 16.508 11 14.667 11h.666Z"/>
+          </svg>
+          <span class="flex-1 whitespace-nowrap">Employees</span>
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="#"
+          class="flex items-center gap-3 px-3 py-2 rounded-xl text-emerald-50 hover:bg-emerald-400/80 hover:text-white transition-colors group"
+        >
+          <svg class="w-6 h-6 text-emerald-50" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <rect x="4" y="4" width="16" height="16" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+            <path d="M4 10h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M9 3v2M15 3v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="flex-1 whitespace-nowrap">Leaves</span>
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="#"
+          class="flex items-center gap-3 px-3 py-2 rounded-xl text-emerald-50 hover:bg-emerald-400/80 hover:text-white transition-colors group"
+        >
+          <svg class="w-6 h-6 text-emerald-50" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M4 5a1 1 0 0 1 1-1h4v6H4V5Z"/>
+            <path d="M10 4h4a1 1 0 0 1 1 1v5h-5V4Z"/>
+            <path d="M4 11h5v7H5a1 1 0 0 1-1-1v-6Z"/>
+            <path d="M11 11h5v7h-5v-7Z"/>
+            <path d="M17 11h2a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-2v-8Z"/>
+          </svg>
+          <span class="flex-1 whitespace-nowrap">Departments</span>
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="#"
+          class="flex items-center gap-3 px-3 py-2 rounded-xl text-emerald-50 hover:bg-emerald-400/80 hover:text-white transition-colors group"
+        >
+          <svg class="w-6 h-6 text-emerald-50" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="flex-1 whitespace-nowrap">Reports</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</aside>
