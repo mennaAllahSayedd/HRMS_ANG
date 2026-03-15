@@ -1,1 +1,134 @@
-<p>edit-employee-profile works!</p>
+<div class="min-h-screen bg-emerald-50 py-8 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-3xl mx-auto">
+    <div class="mb-6 flex items-center justify-between">
+      <h1 class="text-2xl font-bold text-black">
+        Edit Profile
+      </h1>
+      <a
+        routerLink="/layout/employee-profile"
+        class="text-sm font-medium text-gray-600 hover:text-black transition-colors"
+      >
+        ← Back to profile
+      </a>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md border border-emerald-100 overflow-hidden">
+      <div class="px-6 py-5 border-b border-emerald-100 bg-emerald-100 flex items-center gap-2">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-black text-sm font-semibold">
+          #
+        </span>
+        <h2 class="text-lg font-semibold text-black">Employee Information</h2>
+      </div>
+
+      @if (!employee) {
+        <div class="p-8 text-center">
+          <div class="inline-flex flex-col items-center gap-4 animate-pulse">
+            <div class="w-16 h-16 bg-emerald-200 rounded-full"></div>
+            <div class="h-4 w-48 bg-emerald-200 rounded"></div>
+          </div>
+        </div>
+      } @else {
+        <form (ngSubmit)="save()" class="p-6 space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-600 mb-1">First Name</label>
+              <input
+                type="text"
+                [(ngModel)]="form.firstName"
+                name="firstName"
+                class="w-full px-4 py-2 rounded-lg border border-emerald-100 bg-emerald-50 text-black focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-200"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-600 mb-1">Last Name</label>
+              <input
+                type="text"
+                [(ngModel)]="form.lastName"
+                name="lastName"
+                class="w-full px-4 py-2 rounded-lg border border-emerald-100 bg-emerald-50 text-black focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-200"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-600 mb-1">Email</label>
+            <input
+              type="email"
+              [(ngModel)]="form.email"
+              name="email"
+              class="w-full px-4 py-2 rounded-lg border border-emerald-100 bg-emerald-50 text-black focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-200"
+            />
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-600 mb-1">Phone</label>
+              <input
+                type="text"
+                [(ngModel)]="form.phone"
+                name="phone"
+                class="w-full px-4 py-2 rounded-lg border border-emerald-100 bg-emerald-50 text-black focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-200"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-600 mb-1">Age</label>
+              <input
+                type="number"
+                [(ngModel)]="form.age"
+                name="age"
+                min="1"
+                class="w-full px-4 py-2 rounded-lg border border-emerald-100 bg-emerald-50 text-black focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-200"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-600 mb-1">Job Title</label>
+            <input
+              type="text"
+              [(ngModel)]="form.jobTile"
+              name="jobTile"
+              class="w-full px-4 py-2 rounded-lg border border-emerald-100 bg-emerald-50 text-black focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-200"
+            />
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-600 mb-1">Department ID</label>
+              <input
+                type="number"
+                [(ngModel)]="form.departmentId"
+                name="departmentId"
+                class="w-full px-4 py-2 rounded-lg border border-emerald-100 bg-emerald-50 text-black focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-200"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-600 mb-1">Manager ID</label>
+              <input
+                type="number"
+                [(ngModel)]="form.managerId"
+                name="managerId"
+                class="w-full px-4 py-2 rounded-lg border border-emerald-100 bg-emerald-50 text-black focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-200"
+              />
+            </div>
+          </div>
+
+          <div class="flex gap-3 pt-2">
+            <button
+              type="submit"
+              class="px-5 py-2.5 rounded-lg bg-emerald-600 text-white font-medium hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-colors"
+            >
+              Save changes
+            </button>
+            <a
+              routerLink="/layout/employee-profile"
+              class="px-5 py-2.5 rounded-lg bg-gray-100 text-black font-medium hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300 transition-colors inline-flex items-center"
+            >
+              Cancel
+            </a>
+          </div>
+        </form>
+      }
+    </div>
+  </div>
+</div>

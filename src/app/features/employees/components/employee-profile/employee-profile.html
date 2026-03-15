@@ -40,7 +40,7 @@
 
           <!-- Quick actions -->
           <div class="md:ml-auto flex gap-4 mt-6 md:mt-0">
-            <button [routerLink]="['edit-employee-profile']" 
+            <button [routerLink]="['/layout/employee-profile/edit']"
               class="px-6 py-2.5 bg-white/90 text-black font-semibold rounded-full shadow-lg hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-emerald-200 transition-colors border border-emerald-100 inline-flex items-center gap-2"
             >
               <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 shadow-sm"></span>
@@ -104,6 +104,7 @@
         </div>
 
       </div>
+<router-outlet></router-outlet>
 
     </ng-container>
 

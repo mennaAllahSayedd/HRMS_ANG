@@ -1,0 +1,85 @@
+<div class="min-h-screen bg-emerald-50 py-8 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-6 flex items-center justify-between">
+      <h1 class="text-2xl font-bold text-black">
+        Leave Requests
+      </h1>
+      <p class="text-sm text-gray-600">
+        Total: {{ leaves?.length || 0 }}
+      </p>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md border border-emerald-100 overflow-hidden">
+      <div class="px-6 py-5 border-b border-emerald-100 bg-emerald-100 flex items-center gap-2">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-black text-sm font-semibold">
+          #
+        </span>
+        <h2 class="text-lg font-semibold text-black">Employees on Leave</h2>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm text-black">
+          <thead>
+            <tr class="border-b border-emerald-100 bg-emerald-50/70">
+              <th class="px-6 py-4 font-semibold text-gray-700">Employee</th>
+              <th class="px-6 py-4 font-semibold text-gray-700">Start Date</th>
+              <th class="px-6 py-4 font-semibold text-gray-700">End Date</th>
+              <th class="px-6 py-4 font-semibold text-gray-700">Type</th>
+              <th class="px-6 py-4 font-semibold text-gray-700">Status</th>
+              <th class="px-6 py-4 font-semibold text-gray-700">Reason</th>
+              <th class="px-6 py-4 font-semibold text-gray-700 text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (leave of leaves; track leave.id) {
+              <tr class="border-b border-emerald-50 hover:bg-emerald-50/50 transition-colors">
+                <td class="px-6 py-4 font-medium">{{ displayEmployee(leave) }}</td>
+                <td class="px-6 py-4">{{ leave.startDate }}</td>
+                <td class="px-6 py-4">{{ leave.endDate }}</td>
+                <td class="px-6 py-4">{{ leave.type || '—' }}</td>
+                <td class="px-6 py-4">
+                  <span
+                    class="inline-flex px-2.5 py-0.5 rounded-full text-xs font-medium"
+                    [class.bg-amber-100]="leave.status === 'PENDING'"
+                    [class.text-amber-800]="leave.status === 'PENDING'"
+                    [class.bg-emerald-100]="leave.status === 'APPROVED' || leave.status === 'Accepted'"
+                    [class.text-emerald-800]="leave.status === 'APPROVED' || leave.status === 'Accepted'"
+                    [class.bg-red-100]="leave.status === 'REJECTED'"
+                    [class.text-red-800]="leave.status === 'REJECTED'"
+                  >
+                    {{ leave.status }}
+                  </span>
+                </td>
+                <td class="px-6 py-4 max-w-xs truncate">{{ leave.reason || '—' }}</td>
+                <td class="px-6 py-4 text-right">
+                  @if (leave.status === 'PENDING' || leave.status?.toLowerCase() === 'pending') {
+                    <button
+                      type="button"
+                      (click)="acceptRequest(leave)"
+                      class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-100 text-black font-medium hover:bg-emerald-200 focus:outline-none focus:ring-2 focus:ring-emerald-200 transition-colors"
+                    >
+                      Accept
+                    </button>
+                    <button
+                      type="button"
+                      (click)="deleteRequest(leave)"
+                      class="ml-2 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-50 text-red-700 font-medium hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200 transition-colors"
+                    >
+                      Delete
+                    </button>
+                  } @else {
+                    <span class="text-gray-500 text-xs">—</span>
+                  }
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+
+      @if (leaves?.length === 0) {
+        <p class="px-6 py-8 text-center text-gray-600">No leave requests found.</p>
+      }
+    </div>
+  </div>
+</div>
